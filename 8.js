@@ -1,11 +1,17 @@
-function objMap(obj, func) {
-    return Object.fromEntries(
-      Object.entries(obj).map(([k, v]) => 
-        [k, v === Object(v) ? objMap(v, func) : func(v)]
-      )
-    );
-  }
-  
-  // To square each value you can call it like this:
-  let mappedObj = objMap(obj, (x) => x * x);
-  
+let anything = new Map([
+
+  ["Kazakhstan", "Astana"],
+
+  ["Work", "sadly"],
+
+  ["Alexey",    "Red"]
+
+]);
+
+console.log(anything);
+
+for (let key of anything.keys()) {
+  console.log('Ключ — ' + key + ', значение — ' + anything.get(key));
+
+
+}
